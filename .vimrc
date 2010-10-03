@@ -12,6 +12,11 @@ set autoindent
 set smartindent
 syntax on
 filetype plugin indent on
+if has("gui_running")
+	color desert
+else
+	color pablo
+endif
 
 " 设置编码
 set encoding=utf-8
@@ -27,9 +32,10 @@ set helplang=cn
 set nobackup
 set nowritebackup
 set noswapfile
-colorscheme desert
 "设置编程缩进
 autocmd FileType c,cpp,h set tabstop=4 | set softtabstop=4 | set shiftwidth=4 | set expandtab | set nu | setl fdm=syntax | setl nofen
+autocmd FileType python setlocal et sta sw=4 sts=4
+autocmd FileType python setlocal makeprg=python\ %
 
 "Set mapleader
 let mapleader = ","

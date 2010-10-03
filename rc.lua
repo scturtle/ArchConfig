@@ -22,7 +22,7 @@ awful.util.spawn_with_shell("xset b off")
 --awful.util.spawn_with_shell("xcompmgr &")
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+beautiful.init("/usr/share/awesome/themes/archblue/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
