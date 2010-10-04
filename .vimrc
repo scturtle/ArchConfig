@@ -33,7 +33,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 "设置编程缩进
-autocmd FileType c,cpp,h set tabstop=4 | set softtabstop=4 | set shiftwidth=4 | set expandtab | set nu | setl fdm=syntax | setl nofen
+autocmd FileType c,cpp,h set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nu fdm=syntax nofen
 autocmd FileType python setlocal et sta sw=4 sts=4
 autocmd FileType python setlocal makeprg=python\ %
 
@@ -88,3 +88,14 @@ func! Cpp2html()
     exec "set nu"
     exec "colorscheme desert"
 endfunc
+""""""""""""""""""""""""""""
+" ctags
+"map <C-F11> :!ctags -R .<CR>
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR>
+" taglist
+nnoremap <silent> <F4> :TlistToggle<CR>
+let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
+let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
+let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口 
+" cscope
+map <F12> :!cscope -Rbq<CR>:cs add cscope.out<CR>
