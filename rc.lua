@@ -10,16 +10,12 @@ require("vicious")
 
 awful.util.spawn_with_shell("gnome-settings-daemon &")
 awful.util.spawn_with_shell("gnome-power-manager &")
---awful.util.spawn_with_shell("wmname LG3D")
-awful.util.spawn_with_shell("killall fcitx")
-awful.util.spawn_with_shell("fcitx")
-awful.util.spawn_with_shell("killall wicd-client")
-awful.util.spawn_with_shell("wicd-client")
-awful.util.spawn_with_shell("killall xcompmgr")
-awful.util.spawn_with_shell("xcompmgr &")
+awful.util.spawn_with_shell("fcitx -d")
+awful.util.spawn_with_shell("nm-applet")
+awful.util.spawn_with_shell("dcompmgr --no-fade")
 awful.util.spawn_with_shell("xset b off")
---awful.util.spawn_with_shell("conky")
---awful.util.spawn_with_shell("xcompmgr &")
+awful.util.spawn_with_shell("googsystray")
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/archblue/theme.lua")
@@ -57,13 +53,13 @@ layouts =
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-	names = { "1.web", "2.term", "3.fs", "4",
-	"5", "6", "7", "8.im", "9.fun",
+	names = { "1.web", "2.term", "3.work", "4.fs",
+	"5", "6", "7", "8", "9.fun",
 },
 layout = {
-	layouts[12], layouts[5], layouts[1],
+	layouts[12], layouts[5], layouts[5],
 	layouts[1], layouts[1], layouts[1],
-	layouts[1], layouts[5], layouts[9],
+	layouts[1], layouts[1], layouts[9],
 }}
 for s = 1, screen.count() do
 	tags[s] = awful.tag(tags.names, s, tags.layout)
@@ -81,20 +77,11 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { 
 	{ "awesome", myawesomemenu, beautiful.awesome_icon },
-	--{ "pcmanfm-mod", "pcmanfm-mod" },
-	{ "pcmanfm", "pcmanfm" },
 	{ "nautilus", "nautilus --no-desktop" },
 	{ "firefox", "firefox" },
-	{ "tomboy", "tomboy" },
-	{ "hotot", "proxychains hotot" },
-	{ "empathy", "empathy" },
 	{ "exaile", "exaile" },
 	{ "gvim", "gvim" },
 	{ "calc", "gnome-calculator" },
-	--{ "VirtualBox", "VirtualBox" },
-	--{ "blueman", "blueman-applet" },
-	--{ "linuxqq", "qq" },
-	--{ "war3", "/home/scturtle/war3.sh" },
 	{ "", nil },
 	{ "close menu", function () mymainmenu:hide(true) end },
 }
@@ -111,34 +98,25 @@ separator = widget({ type = "textbox" })
 spacer.text     = " "
 separator.text  = "|"
 
--- Create a netwidget (usage)
-netwidget = widget({ type = "textbox" })
-vicious.register(netwidget, vicious.widgets.net, "${wlan0 up_kb}kb/s / ${wlan0 down_kb}kb/s", 1)
-
--- Create an fswidget (Eat your heart out Saethr!)
-fswidget = widget({ type = "textbox" })
-vicious.register(fswidget, vicious.widgets.fs, "${/home used_p}GB / ${/home avail_p}GB", 37)
-
--- Create a gmailwidget (inbox status)
-gmailwidget = widget({ type = "textbox" })
-vicious.register(gmailwidget, vicious.widgets.gmail, "${count}", 260)
-
 -- Create a batwidget (status chrg%)
 batwidget = widget({ type = "textbox" })
-vicious.register(batwidget, vicious.widgets.bat, "$1$2%", 61, "BAT0")
+batwidget.width, batwidget.align = 35, "right"
+vicious.register(batwidget, vicious.widgets.bat, "<span color=\"orange\">$1$2%</span>", 61, "BAT1")
 
 -- Create a memwidget (usage$ usedMB/TotalMB)
 memwidget = widget({ type = "textbox" })
-vicious.register(memwidget, vicious.widgets.mem, "$1% ($2MB/$3MB)", 13)
+memwidget.width, memwidget.align = 135, "right"
+vicious.register(memwidget, vicious.widgets.mem, "<span color=\"yellow\">$1%</span> ($2MB/$3MB)", 13)
 
 -- Create a cpuwidget (usage%)
 cpuwidget = widget({ type = "textbox" })
-vicious.register(cpuwidget, vicious.widgets.cpu, "$1%:$2%", 2)
+cpuwidget.width, cpuwidget.align = 35, "right"
+vicious.register(cpuwidget, vicious.widgets.cpu, "<span color=\"green\">$1%</span>", 2)
 
--- Create a wifiwidget
-wifiwidget = widget({ type = "textbox" })
-vicious.register(wifiwidget, vicious.widgets.wifi, "${ssid} ${link}% ${rate}", 5, "wlan0")
--- }}}
+-- Create a cpufreqwidget
+cpufreqwidget = widget({ type = "textbox" })
+cpufreqwidget.width, cpufreqwidget.align = 45, "right"
+vicious.register(cpufreqwidget, vicious.widgets.cpufreq, "$2GHz", 2, "cpu0")
 
 -- {{{ Wibox
 -- Create a textclock widget
@@ -218,12 +196,9 @@ for s = 1, screen.count() do
 		mylayoutbox[s],
 		mytextclock, spacer,
 		separator, spacer,batwidget, spacer,separator,
-		--spacer,netwidget,spacer, separator,
-		--wifiwidget, spacer, wifiicon, separator,
-		--fswidget, spacer, fsicon, separator,
 		spacer,memwidget, spacer, separator,
-		spacer,cpuwidget, spacer, --separator,
-		--gmailwidget, spacer, gmailicon, separator,
+		spacer,cpuwidget, spacer, separator,
+		spacer,cpufreqwidget, spacer, --separator,
 		s == 1 and mysystray or nil,
 		mytasklist[s],
 		layout = awful.widget.layout.horizontal.rightleft

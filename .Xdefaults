@@ -28,28 +28,16 @@ URxvt.color12: SteelBlue1
 URxvt.color13: magenta
 URxvt.color14: cyan
 URxvt.color15: white
-!!URL操作
-URxvt.urlLauncher:firefox
-URxvt.matcher.button:1
-Urxvt.perl-ext-common:matcher
 !!滚动条设置
-URxvt.scrollBar:True
-URxvt.scrollBar_right:True
-URxvt.scrollBar_floating:False
-URxvt.scrollstyle:plain
+URxvt.scrollBar:False
 !!滚屏设置
 URxvt.mouseWheelScrollPage:True
 URxvt.scrollTtyOutput: False
 URxvt.scrollWithBuffer: True
 URxvt.scrollTtyKeypress: True
-!!光标闪烁
-URxvt.cursorBlink:True
-URxvt.saveLines:3000
-!!边框
-URxvt.borderLess:False
 !!字体设置
 Xft.dpi:96
-URxvt.font:xft:文泉驿等宽微米黑:size=9:style=Regular:antialias=true,xft:文泉驿等宽微米黑:size=8:style=Regular:antialias=true
-URxvt.boldfont:xft:文泉驿等宽微米黑:size=9:style=BOld:antialias=true,xft:文泉驿等宽微米黑:size=8:style=Bold:antialias=true
+URxvt.font:xft:文泉驿等宽微米黑:size=12:style=Regular:antialias=true,xft:文泉驿等宽微米黑:size=12:style=Regular:antialias=true
+URxvt.boldfont:xft:文泉驿等宽微米黑:size=12:style=BOld:antialias=true,xft:文泉驿等宽微米黑:size=12:style=Bold:antialias=true
 !!标签
 URxvt.perl-ext-common: default,tabbed
