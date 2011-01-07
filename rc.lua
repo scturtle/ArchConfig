@@ -100,7 +100,7 @@ separator.text  = "|"
 
 -- Create a batwidget (status chrg%)
 batwidget = widget({ type = "textbox" })
-batwidget.width, batwidget.align = 35, "right"
+batwidget.width, batwidget.align = 40, "right"
 vicious.register(batwidget, vicious.widgets.bat, "<span color=\"orange\">$1$2%</span>", 61, "BAT1")
 
 -- Create a memwidget (usage$ usedMB/TotalMB)
