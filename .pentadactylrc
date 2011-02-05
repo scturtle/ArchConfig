@@ -10,11 +10,13 @@ noremap J <C-d>
 noremap K <C-u>
 
 noremap <C-q> <C-z>
+noremap <C-S-q> <C-z>
 noremap s <C-c>
 noremap <C-Right> <C-a>
 noremap <C-Left> <C-x>
 
 inoremap <C-q> <C-z>
+inoremap <C-S-q> <C-z>
 
 noremap <C-c> <C-v><C-c>
 noremap <C-a> <C-v><C-a>
@@ -36,4 +38,4 @@ inoremap <C-a> <C-v><C-a>
 set nextpattern=\s*下一页|下一张|下一篇|下一頁|下页|后页\s*,^\bnext\b,\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b
 set previouspattern=\s*上一页|上一张|上一篇|上一頁|上页|前页\s*,^\bprev|previous\b,\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$
 
-set passkeys+='https://www\.google\.com/reader':jkonplmsS
+set passkeys+='https://www\.google\.com/reader':jkfvgaonplmsS
