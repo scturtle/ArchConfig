@@ -34,7 +34,10 @@ set noswapfile
 "设置编程缩进
 autocmd FileType c,cpp,h set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nu fdm=syntax nofen
 autocmd FileType python setlocal et sta sw=4 sts=4
+autocmd FileType html,htmldjango setlocal et sta sw=2 sts=2
 autocmd FileType python setlocal makeprg=python\ %
+autocmd FileType tex set makeprg=xelatex\ %
+autocmd FileType tex map <F10> :!evince %<.pdf<CR>
 
 "Set mapleader
 let mapleader = ","
