@@ -1,4 +1,3 @@
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set ru
@@ -13,9 +12,9 @@ set smartindent
 syntax on
 filetype plugin indent on
 if has("gui_running")
-	color desert
+  color desert
 else
-	color pablo
+  color pablo
 endif
 set guifont=Monospace\ 11
 
@@ -51,7 +50,7 @@ map <silent> <leader>ss :source ~/.vimrc<cr>
 "Fast editing of .vimrc
 map <silent> <leader>ee :e ~/.vimrc<cr>
 "When .vimrc is edited, reload it
-autocmd! bufwritepost .vimrc source ~/.vimrc 
+autocmd! bufwritepost .vimrc source ~/.vimrc
 
 """"""""""""""""""""""""""""""
 map <C-j> <C-W>j
@@ -106,8 +105,8 @@ endfunc
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR>
 " taglist
 nnoremap <silent> <F4> :TlistToggle<CR>
-let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
-let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
-let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口 
+let Tlist_Show_One_File = 1 "不同时显示多个文件的tag，只显示当前文件的
+let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退出vim
+let Tlist_Use_Right_Window = 1 "在右侧窗口中显示taglist窗口
 " cscope
 map <F12> :!cscope -Rbq<CR>:cs add cscope.out<CR>
