@@ -17,6 +17,7 @@ if has("gui_running")
 else
 	color pablo
 endif
+set guifont=Monospace\ 11
 
 " 设置编码
 set encoding=utf-8
@@ -35,8 +36,13 @@ set noswapfile
 "设置编程缩进
 autocmd FileType c,cpp,h set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nu fdm=syntax nofen
 autocmd FileType python setlocal et sta sw=4 sts=4
-autocmd FileType python setlocal makeprg=python\ %
-
+autocmd FileType html,htmldjango setlocal et sta sw=2 sts=2
+autocmd FileType python setlocal makeprg=python2\ %
+autocmd FileType tex set makeprg=xelatex\ %
+autocmd FileType tex map <F10> :!evince %<.pdf<CR>
+" persistent undo
+set undodir=~/.vim/undodir
+set undofile
 "Set mapleader
 let mapleader = ","
 
@@ -53,6 +59,12 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 """"""""""""""""""""""""""""""
+map <F3> :call CompileRunOpengl()<CR>
+func! CompileRunOpengl()
+    exec "w"
+    exec "!gcc -g -Wall % -o %< -lglut -lGL -lGLU -lm -L/usr/X11R6/lib"
+    exec "! ./%<"
+endfunc
 " C的编译和运行
 map <F6> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
@@ -67,13 +79,13 @@ func! CompileRunGpp()
     exec "w"
     exec "!pwd"
     exec "!g++ -g -Wall % -o %<"
-    exec "! ./%<"
+    exec "!time ./%<"
 endfunc
 
 " gdb调试
 map <F8> :call Gdb()<CR>
 func! Gdb()
-    exec "!gnome-terminal -e \"gdb %<\""
+    exec "!urxvt -e gdb %<"
 endfunc
 
 " 将代码输出为html

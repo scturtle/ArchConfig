@@ -1,19 +1,19 @@
 !!$HOME/.Xdefaults
-URxvt.preeditType:Root
+URxvt.preeditType: Root
 !!调整此处设置输入法
 URxvt.inputMethod: fcitx
 !!颜色设置
 URxvt.depth:32
 !!中括号内数表示透明度
-URxvt.background: [90]#000000
+URxvt.background: [80]black
 URxvt.colorBD: white
 URxvt.colorUL: blue
 URxvt.colorIT: green
 URxvt.underlineColor: blue
 URxvt.foreground: white
-URxvt.cursorColor: White
+URxvt.cursorColor: white
 URxvt.color0: black
-URxvt.color1: red3
+URxvt.color1: DodgerBlue
 URxvt.color2: green3
 URxvt.color3: yellow3
 URxvt.color4: DodgerBlue1
@@ -28,28 +28,14 @@ URxvt.color12: SteelBlue1
 URxvt.color13: magenta
 URxvt.color14: cyan
 URxvt.color15: white
-!!URL操作
-URxvt.urlLauncher:firefox
-URxvt.matcher.button:1
-Urxvt.perl-ext-common:matcher
 !!滚动条设置
-URxvt.scrollBar:True
-URxvt.scrollBar_right:True
-URxvt.scrollBar_floating:False
-URxvt.scrollstyle:plain
-!!滚屏设置
-URxvt.mouseWheelScrollPage:True
-URxvt.scrollTtyOutput: False
-URxvt.scrollWithBuffer: True
-URxvt.scrollTtyKeypress: True
-!!光标闪烁
-URxvt.cursorBlink:True
-URxvt.saveLines:3000
+URxvt.scrollBar:False
+URxvt.saveLines:5000
 !!边框
-URxvt.borderLess:False
+!!URxvt.borderLess:False
 !!字体设置
 Xft.dpi:96
-URxvt.font:xft:文泉驿等宽微米黑:size=9:style=Regular:antialias=true,xft:文泉驿等宽微米黑:size=8:style=Regular:antialias=true
-URxvt.boldfont:xft:文泉驿等宽微米黑:size=9:style=BOld:antialias=true,xft:文泉驿等宽微米黑:size=8:style=Bold:antialias=true
+URxvt.font:xft:文泉驿等宽微米黑:size=12:style=Regular:antialias=true,xft:文泉驿等宽微米黑:size=12:style=Regular:antialias=true
+URxvt.boldfont:xft:文泉驿等宽微米黑:size=12:style=BOld:antialias=true,xft:文泉驿等宽微米黑:size=12:style=Bold:antialias=true
 !!标签
 URxvt.perl-ext-common: default,tabbed
