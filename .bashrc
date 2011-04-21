@@ -3,9 +3,11 @@
 PS1='[\u@\h \W]\$ '
 
 PATH+=:.
+alias sudo='sudo '
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
+alias lla='ls -la'
 alias sshgfw='ssh -qTfnN -D 7070 scturtle@hoo.sshchina.com'
 alias sshgfw6='ssh -qTfnN -D 7070 scturtle@hoo6.sshchina.com'
 alias supc='sudo pacman-color'
