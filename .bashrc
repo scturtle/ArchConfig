@@ -1,6 +1,13 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
-PS1='[\u@\h \W]\$ '
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+#PS1='[\u@\h \W]\$ '
+PS1='[\033[1;34m\u@\h\033[0m \033[1;32m\W\033[0m]\$ '
 
 PATH+=:.
 alias sudo='sudo '
