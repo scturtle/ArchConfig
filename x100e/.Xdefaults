@@ -1,4 +1,6 @@
 !!$HOME/.Xdefaults
+!URxvt.borderLess: true
+!URxvt.borderColor: #888888
 URxvt.preeditType:Root
 !!调整此处设置输入法
 URxvt.inputMethod: fcitx
@@ -37,8 +39,8 @@ URxvt.saveLines:5000
 !URxvt.scrollWithBuffer: True
 !URxvt.scrollTtyKeypress: True
 !!字体设置
-Xft.dpi:96
-URxvt.font:xft:文泉驿等宽微米黑:size=12:style=Regular:antialias=true,xft:文泉驿等宽微米黑:size=12:style=Regular:antialias=true
-URxvt.boldfont:xft:文泉驿等宽微米黑:size=12:style=BOld:antialias=true,xft:文泉驿等宽微米黑:size=12:style=Bold:antialias=true
+!Xft.dpi:96
+URxvt.font:xft:文泉驿等宽微米黑:size=10:style=Regular:antialias=true,xft:文泉驿等宽微米黑:size=10:style=Regular:antialias=true
+URxvt.boldfont:xft:文泉驿等宽微米黑:size=10:style=BOld:antialias=true,xft:文泉驿等宽微米黑:size=10:style=Bold:antialias=true
 !!标签
 URxvt.perl-ext-common: default,tabbed

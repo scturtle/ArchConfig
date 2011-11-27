@@ -1,6 +1,10 @@
+
+-- archblue by scturtle
+-- scturtle@gmail.com
+
 -- BASICS
 theme = {}
-theme.font          = "WenQuanYi Micro Hei 12"
+theme.font          = "sans 11"
 
 theme.bg_focus      = "#359cd4"
 theme.bg_normal     = "#333333"
@@ -17,28 +21,29 @@ theme.border_normal = "#242424"
 theme.border_focus  = "#c0c0c0"
 theme.border_marked = "#c0c0c0"
 
--- IMAGES
-theme.layout_fairh           = "/usr/share/awesome/themes/archblue/layouts/fairh.png"
-theme.layout_fairv           = "/usr/share/awesome/themes/archblue/layouts/fairv.png"
-theme.layout_floating        = "/usr/share/awesome/themes/archblue/layouts/floating.png"
-theme.layout_magnifier       = "/usr/share/awesome/themes/archblue/layouts/magnifier.png"
-theme.layout_max             = "/usr/share/awesome/themes/archblue/layouts/max.png"
-theme.layout_fullscreen      = "/usr/share/awesome/themes/archblue/layouts/fullscreen.png"
-theme.layout_tilebottom      = "/usr/share/awesome/themes/archblue/layouts/tilebottom.png"
-theme.layout_tileleft        = "/usr/share/awesome/themes/archblue/layouts/tileleft.png"
-theme.layout_tile            = "/usr/share/awesome/themes/archblue/layouts/tile.png"
-theme.layout_tiletop         = "/usr/share/awesome/themes/archblue/layouts/tiletop.png"
+-- {{{ Layout icon from zenburn
+theme.layout_tile       = "/usr/share/awesome/themes/zenburn/layouts/tile.png"
+theme.layout_tileleft   = "/usr/share/awesome/themes/zenburn/layouts/tileleft.png"
+theme.layout_tilebottom = "/usr/share/awesome/themes/zenburn/layouts/tilebottom.png"
+theme.layout_tiletop    = "/usr/share/awesome/themes/zenburn/layouts/tiletop.png"
+theme.layout_fairv      = "/usr/share/awesome/themes/zenburn/layouts/fairv.png"
+theme.layout_fairh      = "/usr/share/awesome/themes/zenburn/layouts/fairh.png"
+theme.layout_spiral     = "/usr/share/awesome/themes/zenburn/layouts/spiral.png"
+theme.layout_dwindle    = "/usr/share/awesome/themes/zenburn/layouts/dwindle.png"
+theme.layout_max        = "/usr/share/awesome/themes/zenburn/layouts/max.png"
+theme.layout_fullscreen = "/usr/share/awesome/themes/zenburn/layouts/fullscreen.png"
+theme.layout_magnifier  = "/usr/share/awesome/themes/zenburn/layouts/magnifier.png"
+theme.layout_floating   = "/usr/share/awesome/themes/zenburn/layouts/floating.png"
+-- }}}
 
-theme.awesome_icon           = "/usr/share/awesome/themes/archblue/awesome-icon.png"
-theme.tasklist_floating_icon = "/usr/share/awesome/themes/archblue/layouts/floating.png"
-
--- from default for now...
+theme.awesome_icon           = "/usr/share/awesome/themes/sky/awesome-icon.png"
+theme.tasklist_floating_icon = "/usr/share/awesome/themes/zenburn/layouts/floating.png"
 theme.menu_submenu_icon     = "/usr/share/awesome/themes/default/submenu.png"
 theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
 theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
 
 -- MISC
---theme.wallpaper_cmd         = { "awsetbg /usr/share/backgrounds/cosmos/w.jpg" }
+theme.wallpaper_cmd         = { "awsetbg /usr/share/awesome/themes/archblue/archblue-background.png" }
 theme.taglist_squares       = "true"
 theme.titlebar_close_button = "true"
 theme.menu_height           = "20"
